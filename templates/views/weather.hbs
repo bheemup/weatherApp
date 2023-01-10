@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{>headerlinks}}
+</head>
+<body>
+   {{>navbar}}
+     <div class="container-fluid main_header">
+        <div class="row">
+           <div class="col-md-10 col-12 mx-auto">
+            <div class="main_content">
+                 <form class="temp_form">
+                    <input type="text" id="cityName" placeholder="Enter your city name" autocomplete="off">
+                    <input type="submit" value="search" id="submitBtn">
+                 </form>
+            </div>
+            <div class="tempInformation">
+                       <p id="day">Tuesday</p>
+                       <p id="today_date">13 OCT</p>
+            </div>
+            <div class="main_layer">
+                <p id="city_name">
+                    get output here
+                </p>
+                <div class="middle_layer data_hide">
+                       <p class="temp"><span id="tempreture">0</span><sup>o</sup>C</p>
+                       <span style="visibility: hidden;">0</span>
+                       <p id="temp_status"><i class="fa fa-cloud" aria-hidden="true"></i></p>
+                </div>
+            </div>
+           </div>
+        </div>
+     </div> 
+     <footer class="footer">
+        <p>created with 💙 by Bheem</p>
+     </footer>   
+</body>
+</html>
+<script src="js/main.js"></script>
+<script>
+   const Today =document.getElementById("day");
+   const today_date =document.getElementById("today_date");
+   const weekDay =["Sun","Mon","Tue","Wed","Thurs","Fri","Sat"];
+   const Months =['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+   let currentTime =new Date();
+   let day =weekDay[currentTime.getDay()];
+   let month =Months[currentTime.getMonth()];
+   let date =currentTime.getDate();
+
+     Today.innerText=day;
+     today_date.innerText=`${date} ${month}`;
+  
+</script>
